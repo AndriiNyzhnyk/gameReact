@@ -2,8 +2,9 @@ import React from 'react'
 
 let Counter = () => (
     <div id="counter">
-        <h1>Counter</h1>
+        <p>Виконано ходів:</p>
+        <input type="text" value='www' readOnly/>
     </div>
 );
 
-export default Counter
+export default Counter;

@@ -1,5 +1,5 @@
 // import { createStore } from 'redux';
-// import reducers from './reducers';
+// import reducer from './reducers';
 //
-// const store = createStore(reducers);
+// const store = createStore(reducer);
 // export default store;
