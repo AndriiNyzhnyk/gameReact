@@ -1,6 +1,6 @@
 import React from 'react'
 
-let Counter = () => (
+const Counter = () => (
     <div id="counter">
         <p>Виконано ходів:</p>
         <input type="text" value='www' readOnly/>

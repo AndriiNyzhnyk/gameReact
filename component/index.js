@@ -3,7 +3,7 @@ import Counter from './counter'
 import Game from './game'
 import Congratuation from './congratuation'
 
-let Main = () => (
+const Main = () => (
     <div id="game">
         <h1>Hello World</h1>
         <Counter />

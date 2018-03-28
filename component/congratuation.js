@@ -1,6 +1,6 @@
 import React from 'react'
 
-let Congratuation = () => (
+const Congratuation = () => (
     <div id="openModal" className="modalDialog">
         <div>
             <h3>Вітаємо, Ви перемогли</h3>
