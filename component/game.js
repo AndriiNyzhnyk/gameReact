@@ -1,13 +1,13 @@
 import React from 'react'
 import Item from './item'
 
-const Game = ({items, onItemClick}) => (
+const Game = ({items, itemClick}) => (
     <div id="game">
         {
             items.map( item => <Item
                 key={item}
                 src={item}
-                onclick={ () => onItemClick(item.id) }
+                onClick={ () => itemClick() }
                 />
             )
         }

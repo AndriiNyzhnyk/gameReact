@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Game from '../component/game'
+import {itemClick} from '../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -7,14 +8,14 @@ const mapStateToProps = (state) => {
     }
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         onTodoClick: (id) => {
-//             dispatch(toggleTodo(id))
-//         }
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        itemClick: () => {
+            dispatch(itemClick());
+        }
+    }
+};
 
-const Gamming = connect(mapStateToProps)(Game);
+const Gamming = connect(mapStateToProps, mapDispatchToProps)(Game);
 
 export default Gamming

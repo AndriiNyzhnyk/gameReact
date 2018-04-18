@@ -19,8 +19,9 @@ const images = [
 
 function reducer(state = images, action) {
     switch (action.type) {
-        case '':
-            return;
+        case 'test':
+            console.log('test');
+            return state;
 
 
         default:
