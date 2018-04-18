@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Item = ({src, onClick}) => (
-    <div className="item" id={'item_'}>
+    <div className="items">
         <img src={src} alt="animal"></img>
     </div>
 );

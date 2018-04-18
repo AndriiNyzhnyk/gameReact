@@ -1,0 +1,25 @@
+/*general style*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#game {
+    width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.items {
+    padding: 0;
+    margin: 0;
+}
+
+.items img {
+    width: 150px;
+    height: 150px;
+}
