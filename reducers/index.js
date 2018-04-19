@@ -18,7 +18,7 @@ const images = [
 ];
 
 const myState = {
-    welcome: true,
+    welcome: false,
     congratuation: false,
     images: images
 };
