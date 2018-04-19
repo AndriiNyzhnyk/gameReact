@@ -4,14 +4,15 @@ import Item from './item'
 const Game = ({items, itemClick}) => (
     <div id="game">
         {
-            items.map( item => <Item
-                key={item}
-                src={item}
-                onClick={ () => itemClick() }
+            items.map(item => <Item
+                    key={item}
+                    src={item}
+                    onClick={() => itemClick()}
                 />
             )
         }
     </div>
+
 );
 
 export default Game;

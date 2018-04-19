@@ -17,7 +17,13 @@ const images = [
     'img/twitter.png'
 ];
 
-function reducer(state = images, action) {
+const myState = {
+    congratuation: false,
+    finish: false,
+    images: images
+};
+
+function reducer(state = myState, action) {
     switch (action.type) {
         case 'test':
             console.log('test');

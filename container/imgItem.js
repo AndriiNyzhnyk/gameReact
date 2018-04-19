@@ -3,8 +3,16 @@ import Game from '../component/game'
 import {itemClick} from '../actions'
 
 const mapStateToProps = (state) => {
-    return {
-        items: state
+    console.log('state');
+    console.log(state);
+    if(state.congratuation === true) {
+        return {
+            items: state.images
+        };
+    } else {
+        return {
+            items: []
+        };
     }
 };
 
