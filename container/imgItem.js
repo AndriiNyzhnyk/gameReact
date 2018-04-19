@@ -5,7 +5,7 @@ import {itemClick} from '../actions'
 const mapStateToProps = (state) => {
     console.log('state');
     console.log(state);
-    if(state.congratuation === true) {
+    if(state.welcome === true) {
         return {
             items: state.images
         };
