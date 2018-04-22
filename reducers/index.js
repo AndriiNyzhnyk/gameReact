@@ -28,7 +28,12 @@ function reducer(state = myState, action) {
         case 'test':
             console.log('test');
             return state;
-
+            break;
+        case 'startGame':
+            console.log('start game');
+            return Object.assign({}, state, {
+                welcome: true
+            });
 
         default:
             return state

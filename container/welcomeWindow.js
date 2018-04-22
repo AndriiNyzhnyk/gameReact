@@ -1,18 +1,21 @@
 import { connect } from 'react-redux'
 import Welcome from '../component/welcome'
+import {startGame} from '../actions'
 
 const mapStateToProps = (state) => {
-    return state;
+    return {
+        state
+    };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         f: () => {
-//             dispatch();
-//         }
-//     }
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        startGame: () => {
+            dispatch(startGame());
+        }
+    }
+};
 
-const WelcomeWindow = connect(mapStateToProps)(Welcome);
+const WelcomeWindow = connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
 export default WelcomeWindow

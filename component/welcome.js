@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Welcome = (state) => {
+const Welcome = ({state, startGame}) => {
     console.log(state);
     if(state.welcome === false) {
         return (
@@ -8,7 +8,7 @@ const Welcome = (state) => {
                 <h3>Введіть своє ім'я</h3>
                 <textarea required wrap="off" id="name"
                           placeholder="Ваше ім'я"></textarea><br/>
-                <button id="newGame">Почати гру</button>
+                <button id="newGame" onClick={startGame}>Почати гру</button>
             </div>
         )
     } else {
