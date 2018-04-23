@@ -17,12 +17,11 @@ let images = [
     'img/twitter.png'
 ];
 
-const myState = {
-    welcome: false,
-    congratuation: false,
-    name: '',
-    images: images
-};
+const myState = Object.create(null);
+myState.welcome = false;
+myState.name = '';
+myState.images = images;
+myState.congratuation = false;
 
 function reducer(state = myState, action) {
     switch (action.type) {
@@ -32,7 +31,8 @@ function reducer(state = myState, action) {
             break;
         case 'startGame':
             console.log('start game');
-            return Object.assign({}, state, {
+            let emptyObj = Object.create(null);
+            return Object.assign(emptyObj, state, {
                 welcome: true,
                 name: action.name
             });
