@@ -12,3 +12,9 @@ export const startGame = () => {
         name: name
     }
 };
+
+export const increment = () => {
+    return {
+        type: 'countIncrement'
+    }
+};

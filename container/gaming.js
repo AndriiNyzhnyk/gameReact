@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const Gamming = connect(mapStateToProps, mapDispatchToProps)(Game);
 
-export default Gamming
+export default Gamming;

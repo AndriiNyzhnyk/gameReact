@@ -21,6 +21,7 @@ const myState = Object.create(null);
 myState.welcome = false;
 myState.name = '';
 myState.images = images;
+myState.counter = 0;
 myState.congratuation = false;
 
 function reducer(state = myState, action) {
@@ -31,10 +32,17 @@ function reducer(state = myState, action) {
             break;
         case 'startGame':
             console.log('start game');
-            let emptyObj = Object.create(null);
-            return Object.assign(emptyObj, state, {
+            let emptyObj1 = Object.create(null);
+            return Object.assign(emptyObj1, state, {
                 welcome: true,
                 name: action.name
+            });
+
+        case 'countIncrement':
+            console.log('increment');
+            let emptyObj2 = Object.create(null);
+            return Object.assign(emptyObj2, state, {
+                counter: state.counter + 1
             });
 
         default:
@@ -42,4 +50,4 @@ function reducer(state = myState, action) {
     }
 }
 
-export default reducer
+export default reducer;

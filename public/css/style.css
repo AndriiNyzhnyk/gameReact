@@ -66,3 +66,18 @@ textarea {
     width: 150px;
     height: 150px;
 }
+
+#counter {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#counter p {
+    margin: 0;
+}
+
+#counter input {
+    width: 150px;
+    height: 20px;
+}
