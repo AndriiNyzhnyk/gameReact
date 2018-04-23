@@ -1,4 +1,4 @@
-const images = [
+let images = [
     'img/adium.png',
     'img/freebsd.png',
     'img/thebat.png',
@@ -20,6 +20,7 @@ const images = [
 const myState = {
     welcome: false,
     congratuation: false,
+    name: '',
     images: images
 };
 
@@ -32,7 +33,8 @@ function reducer(state = myState, action) {
         case 'startGame':
             console.log('start game');
             return Object.assign({}, state, {
-                welcome: true
+                welcome: true,
+                name: action.name
             });
 
         default:

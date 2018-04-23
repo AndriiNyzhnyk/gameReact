@@ -6,8 +6,9 @@ export const itemClick = () => {
 };
 
 export const startGame = () => {
+    const name = document.getElementById('name').value;
     return {
         type: 'startGame',
-        text: 'test123'
+        name: name
     }
 };
