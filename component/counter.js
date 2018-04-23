@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Counter = ({welcome, counter}) => {
-    console.log(welcome);
     if(welcome === true) {
         return (
             <div id="counter">

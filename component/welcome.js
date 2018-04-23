@@ -1,8 +1,7 @@
 import React from 'react'
 
-const Welcome = ({state, startGame}) => {
-    console.log(state);
-    if(state.welcome === false) {
+const Welcome = ({welcome, startGame}) => {
+    if(welcome === false) {
         return (
             <div id="welcome">
                 <h3>Введіть своє ім'я</h3>

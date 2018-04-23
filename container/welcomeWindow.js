@@ -4,7 +4,7 @@ import {startGame} from '../actions'
 
 const mapStateToProps = (state) => {
     return {
-        state
+        welcome: state.welcome
     };
 };
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const WelcomeWindow = connect(mapStateToProps, mapDispatchToProps)(Welcome);
 
-export default WelcomeWindow
+export default WelcomeWindow;

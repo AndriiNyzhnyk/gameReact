@@ -29,9 +29,7 @@ function reducer(state = myState, action) {
         case 'test':
             console.log('test');
             return state;
-            break;
         case 'startGame':
-            console.log('start game');
             let emptyObj1 = Object.create(null);
             return Object.assign(emptyObj1, state, {
                 welcome: true,
