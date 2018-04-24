@@ -5,7 +5,8 @@ import {increment} from '../actions'
 const mapStateToProps = (state) => {
     return {
         welcome: state.welcome,
-        counter: state.counter
+        counter: state.counter,
+        congrat: state.congratuation
     };
 };
 

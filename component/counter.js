@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Counter = ({welcome, counter}) => {
-    if(welcome === true) {
+const Counter = ({welcome, congrat, counter}) => {
+    if(welcome === true && congrat === false) {
         return (
             <div id="counter">
                 <p>Виконано ходів:</p>

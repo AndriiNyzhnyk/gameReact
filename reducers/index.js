@@ -28,7 +28,10 @@ function reducer(state = myState, action) {
     switch (action.type) {
         case 'test':
             console.log('test');
-            return state;
+            let emptyObj = Object.create(null);
+            return Object.assign(emptyObj, state, {
+                congratuation: true
+            });
         case 'startGame':
             let emptyObj1 = Object.create(null);
             return Object.assign(emptyObj1, state, {
