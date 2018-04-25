@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Congratuation = ({congratStatus, counter, userName}) => {
+const Congratuation = ({congratStatus, counter, userName, time}) => {
     if(congratStatus === true) {
         return (
             <div id="openModal" className="modalDialog">
@@ -9,7 +9,7 @@ const Congratuation = ({congratStatus, counter, userName}) => {
                     <p>Виконано ходів:</p>
                     <textarea className="congrat" id="tickResult" readOnly>{counter}</textarea>
                     <p>Пройшло часу:</p>
-                    <textarea className="congrat" id="timeResult" readOnly>rrr</textarea>
+                    <textarea className="congrat" id="timeResult" readOnly>{time + ' c'}</textarea>
                 </div>
             </div>
         )

@@ -22,6 +22,8 @@ myState.welcome = false;
 myState.name = '';
 myState.images = images;
 myState.counter = 0;
+myState.timeStartGame = 0;
+myState.timeResult = 0;
 myState.congratuation = false;
 
 function reducer(state = myState, action) {
@@ -29,14 +31,19 @@ function reducer(state = myState, action) {
         case 'test':
             console.log('test');
             let emptyObj = Object.create(null);
+            let endGame = new Date().getTime();
+            let result = (endGame - state.timeStartGame) / 1000;
             return Object.assign(emptyObj, state, {
-                congratuation: true
+                congratuation: true,
+                timeResult: result
             });
         case 'startGame':
             let emptyObj1 = Object.create(null);
+            let start = new Date().getTime();
             return Object.assign(emptyObj1, state, {
                 welcome: true,
-                name: action.name
+                name: action.name,
+                timeStartGame: start
             });
 
         case 'countIncrement':

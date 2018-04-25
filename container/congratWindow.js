@@ -5,7 +5,8 @@ const mapStateToProps = (state) => {
     return {
         congratStatus: state.congratuation,
         counter: state.counter,
-        userName: state.name
+        userName: state.name,
+        time: state.timeResult
     };
 };
 
