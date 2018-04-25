@@ -30,17 +30,15 @@ function reducer(state = myState, action) {
     switch (action.type) {
         case 'test':
             console.log('test');
-            let emptyObj = Object.create(null);
             let endGame = new Date().getTime();
             let result = (endGame - state.timeStartGame) / 1000;
-            return Object.assign(emptyObj, state, {
+            return Object.assign(Object.create(null), state, {
                 congratuation: true,
                 timeResult: result
             });
         case 'startGame':
-            let emptyObj1 = Object.create(null);
             let start = new Date().getTime();
-            return Object.assign(emptyObj1, state, {
+            return Object.assign(Object.create(null), state, {
                 welcome: true,
                 name: action.name,
                 timeStartGame: start
@@ -48,8 +46,7 @@ function reducer(state = myState, action) {
 
         case 'countIncrement':
             console.log('increment');
-            let emptyObj2 = Object.create(null);
-            return Object.assign(emptyObj2, state, {
+            return Object.assign(Object.create(null), state, {
                 counter: state.counter + 1
             });
 
