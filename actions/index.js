@@ -7,6 +7,11 @@ export const itemClick = () => {
 
 export const startGame = () => {
     const name = document.getElementById('name').value;
+    if(name == '') {
+        alert('Введіть коректне ім\'я');
+        return Object.create(null);
+    }
+
     return {
         type: 'startGame',
         name: name
