@@ -9,7 +9,9 @@ export const startGame = () => {
     const name = document.getElementById('name').value;
     if(name == '') {
         alert('Введіть коректне ім\'я');
-        return Object.create(null);
+        return {
+            type: 'null'
+        };
     }
 
     return {
