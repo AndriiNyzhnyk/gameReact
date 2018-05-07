@@ -1,29 +1,40 @@
 import React from 'react'
 import Item from './item'
 
-const Game = ({items, itemClick}) => (
-    <div id="game">{createElement(items, itemClick)}</div>
-
+const Game = ({init, images, imgCount, visibleImg, itemClick}) => (
+    <div id="game">{createElement(init, images, imgCount, visibleImg, itemClick)}</div>
 );
 
-function createElement( items, itemClick) {
-    let res = new Array(items.length);
-    for(let i = 0; i < items.length; i++) {
-        res.push(<Item
-                    key={items[i]}
-                    src={items[i]}
+function createElement(init, images, imgCount, visibleImg, itemClick) {
+    console.log(init);
+    if(init === false) {
+        console.log(init,
+                    images,
+                    imgCount,
+                    itemClick ,
+                    visibleImg);
+        return imgList(init, images, imgCount, visibleImg, itemClick);
+    }
+}
+
+function imgList(init, images, imgCount, visibleImg, itemClick) {
+    let res = [];
+    for(let i = 0; i < imgCount; i++) {
+        if(i === visibleImg.first || i === visibleImg.second) {
+            res.push(<Item
+                    id={`item_${i}`}
+                    src={images[i]}
                     onClick={() => itemClick()}
                 />
-        );
+            );
+        } else {
+            res.push(<Item
+                id={`item_${i}`}
+                onClick={() => itemClick()}/>);
+        }
+
     }
     return res;
 }
 
 export default Game;
-
-// items.map(item => <Item
-//         key={item}
-//         src={item}
-//         onClick={() => itemClick()}
-//     />
-// )

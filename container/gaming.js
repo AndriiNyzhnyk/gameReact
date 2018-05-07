@@ -4,20 +4,29 @@ import {itemClick} from '../actions'
 
 const mapStateToProps = (state) => {
     if(state.welcome === true && state.congratuation === false) {
+        console.log('init');
         return {
-            items: state.images
+            // items: state.images
+            init: false,
+            images: state.images,
+            imgCount: state.images.length,
+            visibleImg: state.visibleImg
         };
     } else {
+        console.log('empty');
         return {
-            items: []
+            // items: []
+            init: true
         };
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        itemClick: () => {
-            dispatch(itemClick());
+        itemClick: (e) => {
+            console.log(e.target);
+            console.log(e.target.id);
+            dispatch(itemClick(e));
         }
     }
 };
