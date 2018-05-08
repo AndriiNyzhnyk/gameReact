@@ -18,23 +18,23 @@ function createElement(init, images, imgCount, visibleImg, itemClick) {
 }
 
 function imgList(init, images, imgCount, visibleImg, itemClick) {
-    let res = [];
+    let outputArr = [];
     for(let i = 0; i < imgCount; i++) {
         if(i === visibleImg.first || i === visibleImg.second) {
-            res.push(<Item
+            outputArr.push(<Item
                     id={`item_${i}`}
                     src={images[i]}
                     onClick={() => itemClick()}
                 />
             );
         } else {
-            res.push(<Item
+            outputArr.push(<Item
                 id={`item_${i}`}
                 onClick={() => itemClick()}/>);
         }
 
     }
-    return res;
+    return outputArr;
 }
 
 export default Game;
