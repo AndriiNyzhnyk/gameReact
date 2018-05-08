@@ -40,6 +40,25 @@ function reducer(state = myState, action) {
             //     timeResult: result
             // });
             return state;
+        case 'clickItem':
+            let arr = action.id.split('_');
+            let index = parseInt(arr[1], 10);
+            if(state.visibleImg.first === null) {
+                return Object.assign(Object.create(null), state, {
+                    visibleImg: Object.assign(Object.create(null), state.visibleImg, {
+                        first: index
+                    })
+                });
+            } else if(state.visibleImg.second === null) {
+                return Object.assign(Object.create(null), state, {
+                    visibleImg: Object.assign(Object.create(null), state.visibleImg, {
+                        second: index
+                    })
+                });
+            } else {
+                return state;
+            }
+            console.log(arr);
         case 'startGame':
             let start = new Date().getTime();
             return Object.assign(Object.create(null), state, {

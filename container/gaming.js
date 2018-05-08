@@ -24,9 +24,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         itemClick: (e) => {
-            console.log(e.target);
-            console.log(e.target.id);
-            dispatch(itemClick(e));
+            // console.log(e.target);
+            // console.log(e.target.id);
+            let id = e.target.id;
+            dispatch(itemClick(id));
         }
     }
 };

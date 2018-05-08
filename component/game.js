@@ -8,11 +8,11 @@ const Game = ({init, images, imgCount, visibleImg, itemClick}) => (
 function createElement(init, images, imgCount, visibleImg, itemClick) {
     console.log(init);
     if(init === false) {
-        console.log(init,
-                    images,
-                    imgCount,
-                    itemClick ,
-                    visibleImg);
+        // console.log(init,
+        //             images,
+        //             imgCount,
+        //             itemClick ,
+        //             visibleImg);
         return imgList(init, images, imgCount, visibleImg, itemClick);
     }
 }
@@ -24,13 +24,13 @@ function imgList(init, images, imgCount, visibleImg, itemClick) {
             outputArr.push(<Item
                     id={`item_${i}`}
                     src={images[i]}
-                    onClick={() => itemClick()}
+                    onClick={itemClick}
                 />
             );
         } else {
             outputArr.push(<Item
                 id={`item_${i}`}
-                onClick={() => itemClick()}/>);
+                onClick={itemClick}/>);
         }
 
     }

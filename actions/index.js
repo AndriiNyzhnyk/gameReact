@@ -1,7 +1,8 @@
-export const itemClick = () => {
+export const itemClick = (id) => {
+    console.log(id);
     return {
-        type: 'test',
-        text: 'test123'
+        type: 'clickItem',
+        id: id
     }
 };
 
