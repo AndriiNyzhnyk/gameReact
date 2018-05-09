@@ -4,9 +4,7 @@ import {itemClick, hideImg} from '../actions'
 
 const mapStateToProps = (state) => {
     if(state.welcome === true && state.congratuation === false) {
-        console.log('init');
         return {
-            // items: state.images
             init: false,
             images: state.images,
             imgCount: state.images.length,
@@ -15,7 +13,6 @@ const mapStateToProps = (state) => {
     } else {
         console.log('empty');
         return {
-            // items: []
             init: true
         };
     }
@@ -24,8 +21,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         itemClick: (e) => {
-            // console.log(e.target);
-            // console.log(e.target.id);
             let id = e.target.id;
             dispatch(itemClick(id));
         },

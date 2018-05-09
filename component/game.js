@@ -6,13 +6,7 @@ const Game = ({init, images, imgCount, visibleImg, itemClick, hideImg}) => (
 );
 
 function createElement(init, images, imgCount, visibleImg, itemClick, hideImg) {
-    console.log(init);
     if(init === false) {
-        // console.log(init,
-        //             images,
-        //             imgCount,
-        //             itemClick ,
-        //             visibleImg);
         return imgList(init, images, imgCount, visibleImg, itemClick, hideImg);
     }
 }

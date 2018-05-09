@@ -1,5 +1,4 @@
 export const itemClick = (id) => {
-    console.log(id);
     return {
         type: 'clickItem',
         id: id

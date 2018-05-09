@@ -58,19 +58,20 @@ function reducer(state = myState, action) {
             } else {
                 return state;
             }
-            console.log(arr);
         case 'hide':
             let cloneImg = [];
-            console.log('hide img reducer');
-            if(state.images[state.visibleImg.first] === state.images[state.visibleImg.second]) {
+            let index1 = state.visibleImg.first;
+            let index2 = state.visibleImg.second;
+
+            if(state.images[index1] === state.images[index2]) {
                 console.log('equal');
                 cloneImg = state.images.slice(0);
-                if(state.visibleImg.first > state.visibleImg.second) {
-                    cloneImg.splice(state.visibleImg.first, 1);
-                    cloneImg.splice(state.visibleImg.second, 1);
+                if(index1 > index2) {
+                    cloneImg.splice(index1, 1);
+                    cloneImg.splice(index2, 1);
                 } else {
-                    cloneImg.splice(state.visibleImg.second, 1);
-                    cloneImg.splice(state.visibleImg.first, 1);
+                    cloneImg.splice(index2, 1);
+                    cloneImg.splice(index1, 1);
                 }
 
                 return Object.assign(Object.create(null), state, {
