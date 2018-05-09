@@ -64,7 +64,7 @@ function reducer(state = myState, action) {
             let index2 = state.visibleImg.second;
 
             if(state.images[index1] === state.images[index2]) {
-                console.log('equal');
+                alert('Чудово, так тримати !');
                 cloneImg = state.images.slice(0);
                 if(index1 > index2) {
                     cloneImg.splice(index1, 1);
@@ -82,6 +82,7 @@ function reducer(state = myState, action) {
                     })
                 });
             } else {
+                alert('Подумай краще !');
                 return Object.assign(Object.create(null), state, {
                     visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                         first: null,
