@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Game from '../component/game'
-import {itemClick} from '../actions'
+import {itemClick, hideImg} from '../actions'
 
 const mapStateToProps = (state) => {
     if(state.welcome === true && state.congratuation === false) {
@@ -28,6 +28,9 @@ const mapDispatchToProps = (dispatch) => {
             // console.log(e.target.id);
             let id = e.target.id;
             dispatch(itemClick(id));
+        },
+        hideImg: () => {
+            dispatch(hideImg());
         }
     }
 };

@@ -6,6 +6,12 @@ export const itemClick = (id) => {
     }
 };
 
+export const hideImg = () => {
+    return {
+        type: 'hide'
+    }
+};
+
 export const startGame = () => {
     const name = document.getElementById('name').value;
     if(name == '') {

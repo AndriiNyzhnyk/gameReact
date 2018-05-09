@@ -59,6 +59,40 @@ function reducer(state = myState, action) {
                 return state;
             }
             console.log(arr);
+        case 'hide':
+            let cloneImg = [];
+            console.log('hide img reducer');
+            if(state.images[state.visibleImg.first] === state.images[state.visibleImg.second]) {
+                console.log('equal');
+                cloneImg = state.images.slice(0);
+                if(state.visibleImg.first > state.visibleImg.second) {
+                    cloneImg.splice(state.visibleImg.first, 1);
+                    cloneImg.splice(state.visibleImg.second, 1);
+                } else {
+                    cloneImg.splice(state.visibleImg.second, 1);
+                    cloneImg.splice(state.visibleImg.first, 1);
+                }
+
+                return Object.assign(Object.create(null), state, {
+                    images: cloneImg,
+                    visibleImg: Object.assign(Object.create(null), state.visibleImg, {
+                        first: null,
+                        second: null
+                    })
+                });
+            } else {
+                return Object.assign(Object.create(null), state, {
+                    visibleImg: Object.assign(Object.create(null), state.visibleImg, {
+                        first: null,
+                        second: null
+                    })
+                });
+            }
+            console.log(state.visibleImg.first);
+            console.log(state.visibleImg.second);
+
+
+
         case 'startGame':
             let start = new Date().getTime();
             return Object.assign(Object.create(null), state, {

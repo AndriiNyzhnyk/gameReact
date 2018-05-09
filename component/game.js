@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from './item'
 
-const Game = ({init, images, imgCount, visibleImg, itemClick}) => (
-    <div id="game">{createElement(init, images, imgCount, visibleImg, itemClick)}</div>
+const Game = ({init, images, imgCount, visibleImg, itemClick, hideImg}) => (
+    <div id="game">{createElement(init, images, imgCount, visibleImg, itemClick, hideImg)}</div>
 );
 
-function createElement(init, images, imgCount, visibleImg, itemClick) {
+function createElement(init, images, imgCount, visibleImg, itemClick, hideImg) {
     console.log(init);
     if(init === false) {
         // console.log(init,
@@ -13,11 +13,11 @@ function createElement(init, images, imgCount, visibleImg, itemClick) {
         //             imgCount,
         //             itemClick ,
         //             visibleImg);
-        return imgList(init, images, imgCount, visibleImg, itemClick);
+        return imgList(init, images, imgCount, visibleImg, itemClick, hideImg);
     }
 }
 
-function imgList(init, images, imgCount, visibleImg, itemClick) {
+function imgList(init, images, imgCount, visibleImg, itemClick, hideImg) {
     let outputArr = [];
     for(let i = 0; i < imgCount; i++) {
         if(i === visibleImg.first || i === visibleImg.second) {
@@ -25,12 +25,15 @@ function imgList(init, images, imgCount, visibleImg, itemClick) {
                     id={`item_${i}`}
                     src={images[i]}
                     onClick={itemClick}
+                    hide={hideImg}
                 />
             );
         } else {
             outputArr.push(<Item
                 id={`item_${i}`}
-                onClick={itemClick}/>);
+                onClick={itemClick}
+                hide={hideImg}
+            />);
         }
 
     }
