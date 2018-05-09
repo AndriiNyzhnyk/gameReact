@@ -76,6 +76,7 @@ function reducer(state = myState, action) {
 
                 return Object.assign(Object.create(null), state, {
                     images: cloneImg,
+                    counter: state.counter + 1,
                     visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                         first: null,
                         second: null
@@ -84,15 +85,13 @@ function reducer(state = myState, action) {
             } else {
                 alert('Подумай краще !');
                 return Object.assign(Object.create(null), state, {
+                    counter: state.counter + 1,
                     visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                         first: null,
                         second: null
                     })
                 });
             }
-            console.log(state.visibleImg.first);
-            console.log(state.visibleImg.second);
-
 
 
         case 'startGame':
@@ -101,12 +100,6 @@ function reducer(state = myState, action) {
                 welcome: true,
                 name: action.name,
                 timeStartGame: start
-            });
-
-        case 'countIncrement':
-            console.log('increment');
-            return Object.assign(Object.create(null), state, {
-                counter: state.counter + 1
             });
 
         default:

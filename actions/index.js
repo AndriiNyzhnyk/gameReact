@@ -13,7 +13,7 @@ export const hideImg = () => {
 
 export const startGame = () => {
     const name = document.getElementById('name').value;
-    if(name == '') {
+    if(name === '') {
         alert('Введіть коректне ім\'я');
         return {
             type: 'null'
@@ -23,11 +23,5 @@ export const startGame = () => {
     return {
         type: 'startGame',
         name: name
-    }
-};
-
-export const increment = () => {
-    return {
-        type: 'countIncrement'
     }
 };

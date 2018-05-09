@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
             visibleImg: state.visibleImg
         };
     } else {
-        console.log('empty');
         return {
             init: true
         };
