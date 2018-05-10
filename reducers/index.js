@@ -20,7 +20,7 @@ let images = [
 const myState = Object.create(null);
 myState.welcome = false;
 myState.name = '';
-myState.images = images;
+myState.images = randomPositionImg(images);
 myState.visibleImg = Object.create(null);
 myState.visibleImg.first = null;
 myState.visibleImg.second = null;
@@ -117,6 +117,25 @@ function reducer(state = myState, action) {
         default:
             return state
     }
+}
+
+function randomPositionImg(array) {
+    let newArr = [];
+
+    if(Math.random() > 0.5) array.sort();
+    if(Math.random() > 0.5) array.reverse();
+
+    for(let i = 0; i < array.length; i++) {
+        if(Math.random() > 0.5) {
+            newArr.push(array[i]);
+        } else {
+            newArr.unshift(array[i]);
+        }
+    }
+
+    if(Math.random() > 0.5) newArr.reverse();
+
+    return newArr;
 }
 
 export default reducer;
