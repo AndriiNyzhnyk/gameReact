@@ -74,6 +74,18 @@ function reducer(state = myState, action) {
                     cloneImg.splice(index1, 1);
                 }
 
+                if(cloneImg.length === 0 ) {
+                    return Object.assign(Object.create(null), state, {
+                        images: cloneImg,
+                        counter: state.counter + 1,
+                        congratuation: true,
+                        visibleImg: Object.assign(Object.create(null), state.visibleImg, {
+                            first: null,
+                            second: null
+                        })
+                    });
+                }
+
                 return Object.assign(Object.create(null), state, {
                     images: cloneImg,
                     counter: state.counter + 1,
