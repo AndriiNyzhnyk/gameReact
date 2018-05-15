@@ -41,20 +41,25 @@ function reducer(state = myState, action) {
             // });
             return state;
         case 'clickItem':
-            let arr = action.id.split('_');
-            let index = parseInt(arr[1], 10);
-            if(state.visibleImg.first === null) {
+            const arr = action.id.split('_');
+            const index = parseInt(arr[1], 10);
+
+            if(state.visibleImg.first === null && isNaN(index) === false) {
                 return Object.assign(Object.create(null), state, {
                     visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                         first: index
                     })
                 });
-            } else if(state.visibleImg.second === null) {
+
+            } else if(state.visibleImg.second === null
+                    && state.visibleImg.first !== index
+                    && isNaN(index) === false) {
                 return Object.assign(Object.create(null), state, {
                     visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                         second: index
                     })
                 });
+
             } else {
                 return state;
             }
@@ -104,7 +109,6 @@ function reducer(state = myState, action) {
                     })
                 });
             }
-
 
         case 'startGame':
             let start = new Date().getTime();
