@@ -1,13 +1,24 @@
 import React from 'react'
 
 let counterVisibleImg = 0;
+let visibleImg = Object.create(null);
+visibleImg.first = '';
 
 const Item = ({src, id, onClick, hide}) => {
-    if(src !== undefined) {
+    if(typeof(src) !== 'undefined') {
+
         if(counterVisibleImg !== 2) {
+            visibleImg.first = src;
             counterVisibleImg++;
+        } else if(visibleImg.first === src) {
+            setTimeout(() => {
+                counterVisibleImg = 0;
+                visibleImg.first = '';
+                hide();
+            }, 1500);
         } else {
             counterVisibleImg = 0;
+            visibleImg.first = '';
             hide();
         }
 

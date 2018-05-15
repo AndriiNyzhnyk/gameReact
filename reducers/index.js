@@ -63,6 +63,7 @@ function reducer(state = myState, action) {
             } else {
                 return state;
             }
+
         case 'hide':
             let cloneImg = [];
             let index1 = state.visibleImg.first;
@@ -71,6 +72,7 @@ function reducer(state = myState, action) {
             if(state.images[index1] === state.images[index2]) {
                 alert('Чудово, так тримати !');
                 cloneImg = state.images.slice(0);
+
                 if(index1 > index2) {
                     cloneImg.splice(index1, 1);
                     cloneImg.splice(index2, 1);
@@ -80,10 +82,14 @@ function reducer(state = myState, action) {
                 }
 
                 if(cloneImg.length === 0 ) {
+                    let endGame = new Date().getTime();
+                    let result = (endGame - state.timeStartGame) / 1000;
+
                     return Object.assign(Object.create(null), state, {
                         images: cloneImg,
                         counter: state.counter + 1,
                         congratuation: true,
+                        timeResult: result,
                         visibleImg: Object.assign(Object.create(null), state.visibleImg, {
                             first: null,
                             second: null
