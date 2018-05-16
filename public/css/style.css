@@ -12,30 +12,15 @@ textarea {
 }
 
 #welcome {
-    width: 550px;
     text-align: center;
     margin: 15% auto 0 auto !important;
 }
 
 #welcome h3 {
-    font-size: 2.3em;
     font-family: Verdana, "Times New Roman";
-    margin: 20px;
-}
-
-#name {
-    width: 500px;
-    height: 35px;
-    font-size: 1.7em;
-    padding: 10px;
-    text-align: center;
 }
 
 #newGame {
-    margin: 25px auto;
-    padding: 15px;
-    font-size: 1.3em;
-    border-radius: 3px;
     color: black;
     background-color: silver;
 }
@@ -45,6 +30,109 @@ textarea {
     color: white;
 }
 
+@media (max-width: 1600px) {
+    #welcome {
+        width: 550px;
+    }
+
+    #welcome h3 {
+        font-size: 2.3em;
+        margin: 20px;
+    }
+
+    #name {
+        width: 500px;
+        height: 35px;
+        font-size: 1.7em;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #newGame {
+        margin: 25px auto;
+        padding: 15px;
+        font-size: 1.3em;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 1920px) {
+    #welcome {
+        width: 650px;
+    }
+
+    #welcome h3 {
+        font-size: 2.7em;
+        margin: 30px;
+    }
+
+    #name {
+        width: 600px;
+        height: 45px;
+        font-size: 2em;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #newGame {
+        margin: 25px auto;
+        padding: 25px;
+        font-size: 1.5em;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+    #welcome {
+        width: 750px;
+    }
+
+    #welcome h3 {
+        font-size: 3.2em;
+        margin: 40px;
+    }
+
+    #name {
+        width: 700px;
+        height: 55px;
+        font-size: 2.5em;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #newGame {
+        margin: 35px auto;
+        padding: 30px;
+        font-size: 2em;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 2561px) {
+    #welcome {
+        width: 850px;
+    }
+
+    #welcome h3 {
+        font-size: 3.8em;
+        margin: 45px;
+    }
+
+    #name {
+        width: 800px;
+        height: 70px;
+        font-size: 3em;
+        padding: 25px;
+        text-align: center;
+    }
+
+    #newGame {
+        margin: 40px auto;
+        padding: 35px;
+        font-size: 2.3em;
+        border-radius: 5px;
+    }
+}
 
 /*style for game*/
 #game {
