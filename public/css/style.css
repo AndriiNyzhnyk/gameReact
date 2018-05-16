@@ -136,8 +136,6 @@ textarea {
 
 /*style for game*/
 #game {
-    width: 650px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,33 +144,52 @@ textarea {
 }
 
 .items {
-    padding: 0;
-    margin: 0 0 15px 0;
-    width: 150px;
-    height: 150px;
     background-color: silver;
 }
 
-.items img {
-    margin: 0;
-    padding: 0;
-    width: 150px;
-    height: 150px;
-}
 
 #counter {
     position: absolute;
-    top: 5px;
-    left: 5px;
 }
 
-#counter p {
-    margin: 0;
-}
+@media (max-width: 1024px) {
+    #game {
+        width: 600px;
+        margin: 0 auto;
+    }
 
-#counter input {
-    width: 150px;
-    height: 20px;
+    .items {
+        padding: 0;
+        margin: 10px 0 0 0;
+        width: 140px;
+        height: 130px;
+    }
+
+    .items img {
+        margin: 0;
+        padding: 0;
+        width: 140px;
+        height: 130px;
+    }
+
+    #counter {
+        top: 5px;
+        left: 5px;
+    }
+
+    #counter p {
+        margin: 0;
+        font-size: 1.1em;
+    }
+
+    #text {
+        font-size: 1.1em;
+    }
+
+    #counter input {
+        width: 140px;
+        height: 20px;
+    }
 }
 
 /*modal window*/
