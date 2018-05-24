@@ -192,24 +192,24 @@ textarea {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1366px){
+@media (min-width: 1025px) and (max-width: 1400px){
     #game {
-        width: 700px;
+        width: 680px;
         margin: 0 auto;
     }
 
     .items {
         padding: 0;
-        margin: 20px 0 0 0;
+        margin: 10px 0 0 0;
         width: 160px;
-        height: 155px;
+        height: 150px;
     }
 
     .items img {
         margin: 0;
         padding: 0;
         width: 160px;
-        height: 155px;
+        height: 150px;
     }
 
     #counter {
@@ -229,6 +229,46 @@ textarea {
     #counter input {
         width: 160px;
         height: 25px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1921px){
+    #game {
+        width: 1050px;
+        margin: 0 auto;
+    }
+
+    .items {
+        padding: 0;
+        margin: 20px 0 0 0;
+        width: 250px;
+        height: 245px;
+    }
+
+    .items img {
+        margin: 0;
+        padding: 0;
+        width: 250px;
+        height: 245px;
+    }
+
+    #counter {
+        top: 20px;
+        left: 20px;
+    }
+
+    #counter p {
+        margin: 0;
+        font-size: 1.4em;
+    }
+
+    #text {
+        font-size: 1.4em;
+    }
+
+    #counter input {
+        width: 200px;
+        height: 35px;
     }
 }
 
