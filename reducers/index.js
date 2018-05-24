@@ -1,20 +1,20 @@
 let images = [
     'img/adium.png',
-    'img/freebsd.png',
-    'img/thebat.png',
-    'img/evernote.png',
-    'img/linux.png',
-    'img/firefox.png',
     'img/adium.png',
-    'img/monkeys.png',
-    'img/evernote.png',
-    'img/firefox.png',
     'img/freebsd.png',
+    'img/freebsd.png',
+    'img/evernote.png',
+    'img/evernote.png',
     'img/linux.png',
-    'img/twitter.png',
+    'img/linux.png',
+    'img/firefox.png',
+    'img/firefox.png',
     'img/monkeys.png',
+    'img/monkeys.png',
+    'img/twitter.png',
+    'img/twitter.png',
     'img/thebat.png',
-    'img/twitter.png'
+    'img/thebat.png',
 ];
 
 const myState = Object.create(null);
@@ -130,11 +130,9 @@ function reducer(state = myState, action) {
 }
 
 function randomPositionImg(array) {
-    let newArr = [];
-
-    if(Math.random() > 0.5) array.sort();
     if(Math.random() > 0.5) array.reverse();
 
+    let newArr = [];
     for(let i = 0; i < array.length; i++) {
         if(Math.random() > 0.5) {
             newArr.push(array[i]);
@@ -145,7 +143,18 @@ function randomPositionImg(array) {
 
     if(Math.random() > 0.5) newArr.reverse();
 
-    return newArr;
+    let finishArr = [];
+    for(let i = 0; i < newArr.length; i++) {
+        if(Math.random() > 0.5) {
+            finishArr.push(newArr[i]);
+        } else {
+            finishArr.unshift(newArr[i]);
+        }
+    }
+
+    if(Math.random() > 0.5) finishArr.reverse();
+
+    return finishArr;
 }
 
 export default reducer;
